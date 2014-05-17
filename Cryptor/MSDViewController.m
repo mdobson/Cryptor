@@ -12,6 +12,9 @@
 
 @interface MSDViewController ()
 
+@property SecKeyRef public;
+@property SecKeyRef private;
+
 - (void)generateKeyPair;
 
 @end
@@ -21,8 +24,8 @@
 const size_t BUFFER_SIZE = 64;
 const size_t CIPHER_BUFFER_SIZE = 1024;
 const uint32_t PADDING = kSecPaddingNone;
-static const uint8_t publicKeyIdentifier[] = "com.apple.sample.publickey";
-static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey";
+static const uint8_t publicKeyIdentifier[] = "com.apple.sample.publickey\0";
+static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey\0";
 
 
 - (void)viewDidLoad
@@ -44,11 +47,12 @@ static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey";
     strncpy((char *)plainBuffer, inputString, len);
     NSLog(@"strncpy plainBuffer:%s", plainBuffer);
     
-    cipherBuffer = [self encryptBuffer:plainBuffer withKey:publicKey];
+    NSData *encryptedData = [self encryptBuffer:plainBuffer withKey:publicKey];
     NSLog(@"Encrypted:%s", cipherBuffer);
     
-    decryptedBuffer = [self decryptBuffer:cipherBuffer withKey:privateKey];
-    NSLog(@"Decrypted:%s", decryptedBuffer);
+    [self decryptBuffer:encryptedData withKey:privateKey];
+    
+    free(cipherBuffer);
 }
 
 - (void)didReceiveMemoryWarning
@@ -141,25 +145,34 @@ static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey";
     }
 }
 
-- (uint8_t *)encryptBuffer:(uint8_t *)plainBuffer withKey:(SecKeyRef)key {
+- (NSData *)encryptBuffer:(uint8_t *)plainBuffer withKey:(SecKeyRef)key {
     OSStatus status = noErr;
     size_t cipherBufferSize = SecKeyGetBlockSize(key);
     uint8_t *cipherBuffer = malloc(cipherBufferSize);
     size_t plainBufferSize = strlen((char *)plainBuffer);
-    status = SecKeyEncrypt(key, kSecPaddingPKCS1, plainBuffer, plainBufferSize, &cipherBuffer[0], &cipherBufferSize);
-    return cipherBuffer;
+    status = SecKeyEncrypt(key, kSecPaddingPKCS1, plainBuffer, plainBufferSize, cipherBuffer, &cipherBufferSize);
+    
+    NSData *encryptedData = [NSData dataWithBytes:cipherBuffer length:cipherBufferSize];
+    free(cipherBuffer);
+    return encryptedData;
 }
 
-- (uint8_t *)decryptBuffer:(uint8_t *)cipherBuffer withKey:(SecKeyRef)key{
+- (void)decryptBuffer:(NSData *)encryptedData withKey:(SecKeyRef)key{
     OSStatus status = noErr;
-    size_t cipherBufferSize = strlen((char *)cipherBuffer);
+    size_t cipherBufferSize = [encryptedData length];
+    uint8_t *cipherBuffer = (uint8_t *)[encryptedData bytes];
     size_t plainBufferSize = SecKeyGetBlockSize(key);
     uint8_t *plainBuffer = malloc(plainBufferSize);
     
     //status = SecKeyDecrypt(key, kSecPaddingPKCS1, &cipherBuffer[0], cipherBufferSize, &plainBuffer[0], &plainBufferSize);
     
+    if (plainBufferSize < cipherBufferSize) {
+        NSLog(@"Issues with buffer sizes. Can't decrypt.");
+    }
+    
     status = SecKeyDecrypt(key, kSecPaddingPKCS1, cipherBuffer, cipherBufferSize, plainBuffer, &plainBufferSize);
-    return plainBuffer;
+    NSLog(@"%d", (int)status);
+    NSLog(@"%s", plainBuffer);
 }
 
 @end
