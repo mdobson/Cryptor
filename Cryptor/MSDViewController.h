@@ -10,7 +10,8 @@
 
 @interface MSDViewController : UIViewController
 
-@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, retain) IBOutlet UITextView *encrypted;
 
+@property (nonatomic, retain) IBOutlet UITextView *decrypted;
 
 @end
