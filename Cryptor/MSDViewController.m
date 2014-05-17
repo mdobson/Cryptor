@@ -28,7 +28,7 @@ static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self generateKeyPair];
+    [self generateKeyPair];
     SecKeyRef publicKey = [self retrievePublicKey];
     SecKeyRef privateKey = [self retrievePrivateKey];
     
