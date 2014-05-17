@@ -48,9 +48,10 @@ static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey\0";
     NSLog(@"strncpy plainBuffer:%s", plainBuffer);
     
     NSData *encryptedData = [self encryptBuffer:plainBuffer withKey:publicKey];
-    NSLog(@"Encrypted:%s", cipherBuffer);
     
-    [self decryptBuffer:encryptedData withKey:privateKey];
+    NSData *decryptedData = [self decryptBuffer:encryptedData withKey:privateKey];
+    
+    NSLog(@"Decrypted:%@", [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding]);
     
     free(cipherBuffer);
 }
@@ -157,7 +158,7 @@ static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey\0";
     return encryptedData;
 }
 
-- (void)decryptBuffer:(NSData *)encryptedData withKey:(SecKeyRef)key{
+- (NSData *)decryptBuffer:(NSData *)encryptedData withKey:(SecKeyRef)key{
     OSStatus status = noErr;
     size_t cipherBufferSize = [encryptedData length];
     uint8_t *cipherBuffer = (uint8_t *)[encryptedData bytes];
@@ -171,8 +172,9 @@ static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey\0";
     }
     
     status = SecKeyDecrypt(key, kSecPaddingPKCS1, cipherBuffer, cipherBufferSize, plainBuffer, &plainBufferSize);
-    NSLog(@"%d", (int)status);
-    NSLog(@"%s", plainBuffer);
+    NSData *decryptedData = [NSData dataWithBytes:plainBuffer length:plainBufferSize];
+    free(plainBuffer);
+    return decryptedData;
 }
 
 @end
