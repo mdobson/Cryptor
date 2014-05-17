@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F564F5061926E4D8004AA6ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F5051926E4D8004AA6ED /* Foundation.framework */; };
+		F564F5081926E4D8004AA6ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F5071926E4D8004AA6ED /* CoreGraphics.framework */; };
+		F564F50A1926E4D8004AA6ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F5091926E4D8004AA6ED /* UIKit.framework */; };
+		F564F5101926E4D8004AA6ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F564F50E1926E4D8004AA6ED /* InfoPlist.strings */; };
+		F564F5121926E4D8004AA6ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F564F5111926E4D8004AA6ED /* main.m */; };
+		F564F5161926E4D8004AA6ED /* MSDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F564F5151926E4D8004AA6ED /* MSDAppDelegate.m */; };
+		F564F5191926E4D8004AA6ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F564F5171926E4D8004AA6ED /* Main.storyboard */; };
+		F564F51C1926E4D8004AA6ED /* MSDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564F51B1926E4D8004AA6ED /* MSDViewController.m */; };
+		F564F51E1926E4D8004AA6ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F564F51D1926E4D8004AA6ED /* Images.xcassets */; };
+		F564F5251926E4D8004AA6ED /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F5241926E4D8004AA6ED /* XCTest.framework */; };
+		F564F5261926E4D8004AA6ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F5051926E4D8004AA6ED /* Foundation.framework */; };
+		F564F5271926E4D8004AA6ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F5091926E4D8004AA6ED /* UIKit.framework */; };
+		F564F52F1926E4D8004AA6ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F564F52D1926E4D8004AA6ED /* InfoPlist.strings */; };
+		F564F5311926E4D8004AA6ED /* CryptorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F564F5301926E4D8004AA6ED /* CryptorTests.m */; };
+		F564F53B1926E4F9004AA6ED /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F53A1926E4F9004AA6ED /* CoreFoundation.framework */; };
+		F564F53D1926E4FE004AA6ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F564F53C1926E4FE004AA6ED /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F564F5281926E4D8004AA6ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F564F4FA1926E4D8004AA6ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F564F5011926E4D8004AA6ED;
+			remoteInfo = Cryptor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F564F5021926E4D8004AA6ED /* Cryptor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F564F5051926E4D8004AA6ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F564F5071926E4D8004AA6ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F564F5091926E4D8004AA6ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F564F50D1926E4D8004AA6ED /* Cryptor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cryptor-Info.plist"; sourceTree = "<group>"; };
+		F564F50F1926E4D8004AA6ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F564F5111926E4D8004AA6ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F564F5131926E4D8004AA6ED /* Cryptor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cryptor-Prefix.pch"; sourceTree = "<group>"; };
+		F564F5141926E4D8004AA6ED /* MSDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDAppDelegate.h; sourceTree = "<group>"; };
+		F564F5151926E4D8004AA6ED /* MSDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSDAppDelegate.m; sourceTree = "<group>"; };
+		F564F5181926E4D8004AA6ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F564F51A1926E4D8004AA6ED /* MSDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSDViewController.h; sourceTree = "<group>"; };
+		F564F51B1926E4D8004AA6ED /* MSDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSDViewController.m; sourceTree = "<group>"; };
+		F564F51D1926E4D8004AA6ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F564F5231926E4D8004AA6ED /* CryptorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F564F5241926E4D8004AA6ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F564F52C1926E4D8004AA6ED /* CryptorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CryptorTests-Info.plist"; sourceTree = "<group>"; };
+		F564F52E1926E4D8004AA6ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F564F5301926E4D8004AA6ED /* CryptorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptorTests.m; sourceTree = "<group>"; };
+		F564F53A1926E4F9004AA6ED /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		F564F53C1926E4FE004AA6ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F564F4FF1926E4D8004AA6ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F564F53D1926E4FE004AA6ED /* Security.framework in Frameworks */,
+				F564F53B1926E4F9004AA6ED /* CoreFoundation.framework in Frameworks */,
+				F564F5081926E4D8004AA6ED /* CoreGraphics.framework in Frameworks */,
+				F564F50A1926E4D8004AA6ED /* UIKit.framework in Frameworks */,
+				F564F5061926E4D8004AA6ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F564F5201926E4D8004AA6ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F564F5251926E4D8004AA6ED /* XCTest.framework in Frameworks */,
+				F564F5271926E4D8004AA6ED /* UIKit.framework in Frameworks */,
+				F564F5261926E4D8004AA6ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F564F4F91926E4D8004AA6ED = {
+			isa = PBXGroup;
+			children = (
+				F564F50B1926E4D8004AA6ED /* Cryptor */,
+				F564F52A1926E4D8004AA6ED /* CryptorTests */,
+				F564F5041926E4D8004AA6ED /* Frameworks */,
+				F564F5031926E4D8004AA6ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F564F5031926E4D8004AA6ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F564F5021926E4D8004AA6ED /* Cryptor.app */,
+				F564F5231926E4D8004AA6ED /* CryptorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F564F5041926E4D8004AA6ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F564F53C1926E4FE004AA6ED /* Security.framework */,
+				F564F53A1926E4F9004AA6ED /* CoreFoundation.framework */,
+				F564F5051926E4D8004AA6ED /* Foundation.framework */,
+				F564F5071926E4D8004AA6ED /* CoreGraphics.framework */,
+				F564F5091926E4D8004AA6ED /* UIKit.framework */,
+				F564F5241926E4D8004AA6ED /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F564F50B1926E4D8004AA6ED /* Cryptor */ = {
+			isa = PBXGroup;
+			children = (
+				F564F5141926E4D8004AA6ED /* MSDAppDelegate.h */,
+				F564F5151926E4D8004AA6ED /* MSDAppDelegate.m */,
+				F564F5171926E4D8004AA6ED /* Main.storyboard */,
+				F564F51A1926E4D8004AA6ED /* MSDViewController.h */,
+				F564F51B1926E4D8004AA6ED /* MSDViewController.m */,
+				F564F51D1926E4D8004AA6ED /* Images.xcassets */,
+				F564F50C1926E4D8004AA6ED /* Supporting Files */,
+			);
+			path = Cryptor;
+			sourceTree = "<group>";
+		};
+		F564F50C1926E4D8004AA6ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F564F50D1926E4D8004AA6ED /* Cryptor-Info.plist */,
+				F564F50E1926E4D8004AA6ED /* InfoPlist.strings */,
+				F564F5111926E4D8004AA6ED /* main.m */,
+				F564F5131926E4D8004AA6ED /* Cryptor-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F564F52A1926E4D8004AA6ED /* CryptorTests */ = {
+			isa = PBXGroup;
+			children = (
+				F564F5301926E4D8004AA6ED /* CryptorTests.m */,
+				F564F52B1926E4D8004AA6ED /* Supporting Files */,
+			);
+			path = CryptorTests;
+			sourceTree = "<group>";
+		};
+		F564F52B1926E4D8004AA6ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F564F52C1926E4D8004AA6ED /* CryptorTests-Info.plist */,
+				F564F52D1926E4D8004AA6ED /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F564F5011926E4D8004AA6ED /* Cryptor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F564F5341926E4D8004AA6ED /* Build configuration list for PBXNativeTarget "Cryptor" */;
+			buildPhases = (
+				F564F4FE1926E4D8004AA6ED /* Sources */,
+				F564F4FF1926E4D8004AA6ED /* Frameworks */,
+				F564F5001926E4D8004AA6ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cryptor;
+			productName = Cryptor;
+			productReference = F564F5021926E4D8004AA6ED /* Cryptor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F564F5221926E4D8004AA6ED /* CryptorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F564F5371926E4D8004AA6ED /* Build configuration list for PBXNativeTarget "CryptorTests" */;
+			buildPhases = (
+				F564F51F1926E4D8004AA6ED /* Sources */,
+				F564F5201926E4D8004AA6ED /* Frameworks */,
+				F564F5211926E4D8004AA6ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F564F5291926E4D8004AA6ED /* PBXTargetDependency */,
+			);
+			name = CryptorTests;
+			productName = CryptorTests;
+			productReference = F564F5231926E4D8004AA6ED /* CryptorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F564F4FA1926E4D8004AA6ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MSD;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Matthew Dobson";
+				TargetAttributes = {
+					F564F5221926E4D8004AA6ED = {
+						TestTargetID = F564F5011926E4D8004AA6ED;
+					};
+				};
+			};
+			buildConfigurationList = F564F4FD1926E4D8004AA6ED /* Build configuration list for PBXProject "Cryptor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F564F4F91926E4D8004AA6ED;
+			productRefGroup = F564F5031926E4D8004AA6ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F564F5011926E4D8004AA6ED /* Cryptor */,
+				F564F5221926E4D8004AA6ED /* CryptorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F564F5001926E4D8004AA6ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F564F51E1926E4D8004AA6ED /* Images.xcassets in Resources */,
+				F564F5101926E4D8004AA6ED /* InfoPlist.strings in Resources */,
+				F564F5191926E4D8004AA6ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F564F5211926E4D8004AA6ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F564F52F1926E4D8004AA6ED /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F564F4FE1926E4D8004AA6ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F564F5121926E4D8004AA6ED /* main.m in Sources */,
+				F564F5161926E4D8004AA6ED /* MSDAppDelegate.m in Sources */,
+				F564F51C1926E4D8004AA6ED /* MSDViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F564F51F1926E4D8004AA6ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F564F5311926E4D8004AA6ED /* CryptorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F564F5291926E4D8004AA6ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F564F5011926E4D8004AA6ED /* Cryptor */;
+			targetProxy = F564F5281926E4D8004AA6ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F564F50E1926E4D8004AA6ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F564F50F1926E4D8004AA6ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F564F5171926E4D8004AA6ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F564F5181926E4D8004AA6ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F564F52D1926E4D8004AA6ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F564F52E1926E4D8004AA6ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F564F5321926E4D8004AA6ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F564F5331926E4D8004AA6ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F564F5351926E4D8004AA6ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cryptor/Cryptor-Prefix.pch";
+				INFOPLIST_FILE = "Cryptor/Cryptor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F564F5361926E4D8004AA6ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cryptor/Cryptor-Prefix.pch";
+				INFOPLIST_FILE = "Cryptor/Cryptor-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F564F5381926E4D8004AA6ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cryptor.app/Cryptor";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cryptor/Cryptor-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CryptorTests/CryptorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F564F5391926E4D8004AA6ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Cryptor.app/Cryptor";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cryptor/Cryptor-Prefix.pch";
+				INFOPLIST_FILE = "CryptorTests/CryptorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F564F4FD1926E4D8004AA6ED /* Build configuration list for PBXProject "Cryptor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F564F5321926E4D8004AA6ED /* Debug */,
+				F564F5331926E4D8004AA6ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F564F5341926E4D8004AA6ED /* Build configuration list for PBXNativeTarget "Cryptor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F564F5351926E4D8004AA6ED /* Debug */,
+				F564F5361926E4D8004AA6ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F564F5371926E4D8004AA6ED /* Build configuration list for PBXNativeTarget "CryptorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F564F5381926E4D8004AA6ED /* Debug */,
+				F564F5391926E4D8004AA6ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F564F4FA1926E4D8004AA6ED /* Project object */;
+}
