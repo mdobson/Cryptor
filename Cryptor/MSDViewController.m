@@ -31,9 +31,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-static const UInt8 publicKeyIdentifier[] = "com.apple.sample.publickey\0";
+static const uint8_t publicKeyIdentifier[] = "com.apple.sample.publickey";
 
-static const UInt8 privateKeyIdentifier[] = "com.apple.sample.privatekey\0";
+static const uint8_t privateKeyIdentifier[] = "com.apple.sample.privatekey";
 
 - (void)generateKeyPair{
     OSStatus status = noErr;
@@ -56,16 +56,16 @@ static const UInt8 privateKeyIdentifier[] = "com.apple.sample.privatekey\0";
     [privateKeyAttr setObject:privateTag forKey:(__bridge id)kSecAttrApplicationTag];
     
     [publicKeyAttr setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecAttrIsPermanent];
-    [publicKeyAttr setObject:publicTag forKey:(__bridge id)kSecPublicKeyAttrs];
+    [publicKeyAttr setObject:publicTag forKey:(__bridge id)kSecAttrApplicationTag];
+    
+    [keyPairAttr setObject:privateKeyAttr forKey:(__bridge id)kSecPrivateKeyAttrs];
+    [keyPairAttr setObject:publicKeyAttr forKey:(__bridge id)kSecPublicKeyAttrs];
     
     status = SecKeyGeneratePair((__bridge CFDictionaryRef)keyPairAttr, &publicKey, &privateKey);
     
     if (status == errSecSuccess) {
         NSLog(@"No generation error");
     }
-    size_t keySize = SecKeyGetBlockSize(publicKey);
-    NSData *keyData = [NSData dataWithBytes:publicKey length:keySize];
-    self.textView.text = [keyData base64EncodedStringWithOptions:kNilOptions];
     
     if (publicKey) {
         NSLog(@"public:%@", publicKey);
@@ -75,6 +75,31 @@ static const UInt8 privateKeyIdentifier[] = "com.apple.sample.privatekey\0";
     if (privateKey) {
         NSLog(@"private:%@", privateKey);
         CFRelease(privateKey);
+    }
+    
+    [self retrieveKeys];
+}
+
+
+-(void)retrieveKeys {
+    OSStatus status = noErr;
+    SecKeyRef publicKey = NULL;
+    
+    NSData * publicTag = [NSData dataWithBytes:publicKeyIdentifier length:strlen((const char *) publicKeyIdentifier)];
+    
+    NSMutableDictionary *keyQuery = [[NSMutableDictionary alloc] init];
+    [keyQuery setObject:(__bridge id)kSecClassKey forKey:(__bridge id)kSecClass];
+    [keyQuery setObject:(id)publicTag forKey:(__bridge id)kSecAttrApplicationTag];
+    [keyQuery setObject:(__bridge id)kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
+    [keyQuery setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecReturnRef];
+    status = SecItemCopyMatching((__bridge CFDictionaryRef)keyQuery, &publicKey);
+    
+    if (status == errSecSuccess) {
+        size_t keySize = SecKeyGetBlockSize(publicKey);
+        NSData *keyData = [NSData dataWithBytes:publicKey length:keySize];
+        self.textView.text = [keyData base64EncodedStringWithOptions:kNilOptions];
+    } else {
+        NSLog(@"ERR");
     }
 }
 
